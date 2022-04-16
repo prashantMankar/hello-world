@@ -3,6 +3,8 @@ namespace app\src;
 
 class HelloWorld
 {
+    private $msg;
+
     public function __construct($message)
     {
         $this->message($message);
@@ -10,12 +12,14 @@ class HelloWorld
 
     public function message($messages)
     {
-        return $messages;
+        $this->msg = $messages;
+
+        return $this->msg;
     }
 
     public function __toString()
     {
-        return $this->message();
+        return $this->msg;
     }
 }
 

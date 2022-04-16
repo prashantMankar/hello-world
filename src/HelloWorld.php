@@ -3,14 +3,14 @@ namespace app\src;
 
 class HelloWorld
 {
-    public function __construct()
+    public function __construct($message)
     {
-        $this->message();
+        $this->message($message);
     }
 
-    public function message()
+    public function message($messages)
     {
-        return "This is first Hello World class";
+        return $messages;
     }
 
     public function __toString()
@@ -19,4 +19,4 @@ class HelloWorld
     }
 }
 
-echo new HelloWorld();
+echo new HelloWorld('Send user message');

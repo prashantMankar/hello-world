@@ -1,0 +1,23 @@
+{
+    "name": "prashantm/hello-world",
+    "description": "This is helloworld",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Prashantm\\HelloWorld\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "prashant Mankar"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*",
+        "phing/phing": "2.*"
+    }
+}

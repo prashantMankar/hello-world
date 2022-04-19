@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="Helloworld" default="deploy">
-    <target name="deploy" description="Depoly php application">
+    <target name="deploy" depends="composer-install" description="Depoly php application">
         <exec command="php vendor/bin/phpcs --standard=PSR12 --report=csv --report-file=src/log/report-phpcs.csv src/" passthru="true" />
+    </target>
+    <target name="composer-install">
+        <composer php="" composer="/usr/local/bin/composer" command="install">
+        </composer>
     </target>
 </project>

@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="Helloworld" default="deploy">
-    <target name="deploy" depends="composer-install" description="Depoly php application">
+    <target name="deploy" depends="composer-install, check-log-dir" description="Depoly php application">
         <exec command="php vendor/bin/phpcs --standard=PSR12 --report=csv --report-file=src/log/report-phpcs.csv src/" passthru="true" />
     </target>
+
+    <target name="check-log-dir" description="Log dir create if not exist">
+        <available property="output.IS_DIR_EXIST" file="src/log" type="dir" />
+        <if>
+            <equals arg1="${output.IS_DIR_EXIST}" arg2="true"/>
+            <then>
+                <echo msg="Log directory exist"/>
+            </then>
+            <else>
+                <mkdir dir="src/log"/>
+            </else>
+        </if>
+    </target>
+
     <target name="composer-install">
         <composer php="" composer="/usr/local/bin/composer" command="install">
         </composer>

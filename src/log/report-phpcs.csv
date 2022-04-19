@@ -1,0 +1,7 @@
+File,Line,Column,Type,Message,Source,Severity,Fixable
+"/var/www/html/hello-world/src/HelloWorld.php",1,1,warning,"A file should declare new symbols (classes, functions, constants, etc.) and cause no other side effects, or it should execute logic with side effects, but should not do both. The first symbol is defined on line 4 and the first side effect is on line 29.",PSR1.Files.SideEffects.FoundWithSymbols,5,0
+"/var/www/html/hello-world/src/HelloWorld.php",1,1,error,"Header blocks must be separated by a single blank line",PSR12.Files.FileHeader.SpacingAfterBlock,5,1
+"/var/www/html/hello-world/src/HelloWorld.php",29,41,error,"Expected 1 newline at end of file; 0 found",PSR2.Files.EndFileNewline.NoneFound,5,1
+"/var/www/html/hello-world/src/SimpleCalculation.php",1,1,error,"Header blocks must be separated by a single blank line",PSR12.Files.FileHeader.SpacingAfterBlock,5,1
+"/var/www/html/hello-world/src/SimpleCalculation.php",18,5,error,"Function closing brace must go on the next line following the body; found 1 blank lines before brace",PSR2.Methods.FunctionClosingBrace.SpacingBeforeClose,5,1
+

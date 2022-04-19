@@ -1,5 +1,5 @@
 <?php
-namespace app\src;
+namespace Prashantm\HelloWorld;
 
 class HelloWorld
 {

@@ -25,6 +25,6 @@
 
     <target name="phpunit-setup" description="Add configuration of phpunint">
 <!--        <exec executable="./vendor/bin/phpunit" passthru="true" checkreturn="true"/>-->
-        <exec command="php vendor/bin/phpunit" passthru="true"/>
+        <exec command="XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-html src/log/phpunit" passthru="true"/>
     </target>
 </project>

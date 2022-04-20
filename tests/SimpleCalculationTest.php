@@ -14,4 +14,13 @@ class SimpleCalculationTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         $cal = new SimpleCalculation($start, $end);
     }
+
+    public function testAddition()
+    {
+        $start = 10;
+        $end = 10;
+        $cal = new SimpleCalculation($start, $end);
+
+        $this->assertEquals(20, $cal->addition());
+    }
 }

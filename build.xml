@@ -18,6 +18,7 @@
     </target>
 
     <target name="composer-install">
+        <delete file="composer.lock"/>
         <composer php="" composer="/usr/local/bin/composer" command="install">
         </composer>
     </target>

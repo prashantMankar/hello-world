@@ -3,12 +3,11 @@ pipeline {
     stages {
         stage('Preparing stage') {
             steps {
-                // git
+                sh "php --version"
             }
         }
         stage('Build stage') {
              steps {
-                 sh "php --version"
                  sh "composer install"
                  sh "curl -sS -O https://www.phing.info/get/phing-2.17.2.zip"
                  sh "./vendor/phing/phing/bin/phing"
@@ -16,7 +15,7 @@ pipeline {
         }
         stage('Deploy stage') {
             steps {
-                // Test and report
+                sh "XDEBUG_MODE=coverage ./vendor/bin/phpunit"
             }
         }
     }

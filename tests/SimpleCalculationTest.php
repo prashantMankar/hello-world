@@ -12,6 +12,7 @@ class SimpleCalculationTest extends TestCase
         $start = 'string';
         $end = 2;
         $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid Integer');
         $cal = new SimpleCalculation($start, $end);
     }
 
@@ -20,7 +21,13 @@ class SimpleCalculationTest extends TestCase
         $start = 10;
         $end = 10;
         $cal = new SimpleCalculation($start, $end);
+        $response = $cal->addition();
+        $this->assertEquals(20, $response);
+        $this->assertSame(20, $response);
+    }
 
-        $this->assertEquals(20, $cal->addition());
+    private function prepareInput()
+    {
+        return 10;
     }
 }
